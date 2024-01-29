@@ -1,4 +1,4 @@
-FROM harbor.center.org.cn:9000/library/nginx:stable-alpine
+FROM nginx:stable-alpine
 
 ENV HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.' \
     LISTEN_PORT=80 \
