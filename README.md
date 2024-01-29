@@ -26,7 +26,7 @@ docker run -d \
            chrisguoado/nginx-basic-auth:1
 ```
 
-### For container:
+### Forward to process in container:
 ```bash
 docker run -d \
            -e HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.' \
@@ -38,13 +38,14 @@ docker run -d \
 
 > Use single quotes to prevent unwanted interpretation of `$` signs!
 
-### For process on the host:
+### Forward to process on the host:
 ```bash
 docker run -d \
            -e HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.' \
            -e LISTEN_PORT=8888 \
            -e FORWARD_HOST=127.0.0.1 \
            -e FORWARD_PORT=1337 \
+           --network host \
            --name auth \
            chrisguoado/nginx-basic-auth:1
 ```
