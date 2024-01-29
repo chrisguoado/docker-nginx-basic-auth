@@ -1,4 +1,4 @@
-[![Build Status](https://drone-pub.chris-tech.me/api/badges/chrisguoado/docker-nginx-basic-auth/status.svg)](https://drone-pub.chris-tech.me/chrisguoado/docker-nginx-basic-auth)
+[![Build Status](https://drone-pub.christech.pro/api/badges/chrisguoado/docker-nginx-basic-auth/status.svg?ref=refs/heads/dev)](https://drone-pub.christech.pro/chrisguoado/docker-nginx-basic-auth)
 # nginx-basic-auth
 
 ---
@@ -15,6 +15,17 @@ docker run -d -p 80:80 --link web:web --name auth chrisguoado/nginx-basic-auth:1
 Try accessing and logging in with username `foo` and password `bar`.
 
 ## Advanced
+### Serve static files:
+```bash
+docker run -d \
+           -e HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.' \
+           -e SERVE_ONLY=true \
+           -p 8080:80 \
+           -v $PWD/data:/data \
+           --name auth \
+           chrisguoado/nginx-basic-auth:1
+```
+
 ### For container:
 ```bash
 docker run -d \
