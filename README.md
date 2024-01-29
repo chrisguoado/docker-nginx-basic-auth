@@ -1,4 +1,4 @@
-[![Build Status](https://drone-pub.chris-tech.me/api/badges/chrisguoado/docker-nginx-basic-auth/status.svg)](https://drone-pub.chris-tech.me/chrisguoado/docker-nginx-basic-auth)
+[![Build Status](https://drone-pub.christech.pro/api/badges/chrisguoado/docker-nginx-basic-auth/status.svg?ref=refs/heads/dev)](https://drone-pub.christech.pro/chrisguoado/docker-nginx-basic-auth)
 # nginx-basic-auth
 
 ---
